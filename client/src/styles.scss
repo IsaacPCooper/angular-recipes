@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material'as mat;
+@use './m3-theme.scss';
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@include mat.core();
+
+// Theming
+
+// $theme: mat.define-theme((color: (theme-type: light,
+//       primary: mat.$red-palette,
+//       tertiary: mat.$red-palette),
+//     typography: (brand-family: 'Overlock-Regular'
+//     ),
+//     density: (scale: 0)));
+
+
+// Core SCSS
+
+html {
+  @include mat.all-component-themes(m3-theme.$light-theme);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Atma", system-ui;
+}
